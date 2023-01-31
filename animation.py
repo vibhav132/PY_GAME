@@ -1,8 +1,11 @@
 import pygame,sys
 from pygame.locals import *
+import time
 pygame.init()
 FPS = 30
 fpsclock = pygame.time.Clock()
+soundobj = pygame.mixer.Sound('cat.mp3')
+
 Display = pygame.display.set_mode((400,300),0,32)
 pygame.display.set_caption("Animation")
 WHITE = (255,255,255)
@@ -29,9 +32,12 @@ while True:
         if caty == 10:
             direction='right'
     Display.blit(catimg,(catx,caty))
+    soundobj.set_volume(1.0)
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
     pygame.display.update()
+
+    soundobj.play()
     fpsclock.tick(FPS)
