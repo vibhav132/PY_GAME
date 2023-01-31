@@ -1,7 +1,7 @@
 import pygame,sys
 from pygame.locals import *
 pygame.init()
-FPS = 3000000000000000
+FPS = 30
 fpsclock = pygame.time.Clock()
 Display = pygame.display.set_mode((400,300),0,32)
 pygame.display.set_caption("Animation")
